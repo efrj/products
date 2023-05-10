@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  php:
+    build: .
+    ports:
+     - "8000:80"
+     - "443:443"
+    volumes:
+     - ./:/var/www
+     - ./public:/var/www/html
+    container_name: php.products-api
+    links:
+     - db
+  db:  
+    image: mysql:5.7
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./data/scripts:/scripts
+    ports:
+     - 3306:3306
+    container_name: mysql.products-api
+    environment:
+     - MYSQL_ROOT_PASSWORD=1234
+     - MYSQL_DATABASE=product_api
