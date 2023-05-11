@@ -1,8 +1,11 @@
 <template>
   <div class="row">
-    <div col-md-12>
-      <h1>Categorias</h1>
+    <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+      <div class="mb-3 mb-md-0 d-flex text-nowrap">
+        <router-link class="btn btn-success" to="/categorias/criar">Nova Categoria</router-link>
       </div>
+      <h1>Categorias</h1>
+    </div>
   </div>
   <div class="row">
     <div col-md-12>
@@ -35,7 +38,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      categories: [],
+      categories: []
     };
   },
   async created() {
@@ -52,10 +55,22 @@ export default {
     },
     async deleteCategory(id) {
       try {
+        const response = await axios.get(`http://localhost:8000/api/categories/${id}`);
+        this.category = response.data;
         await axios.delete(`http://localhost:8000/api/categories/${id}`);
         await this.fetchCategories();
+        this.$notify({
+          type: "success",
+          title: "Sucesso",
+          text: `A categoria <b>${this.category.name}</b> foi excluída com sucesso!`
+        });
       } catch (error) {
         console.error(error);
+        this.$notify({
+          type: "error",
+          title: "Erro",
+          text: error
+        });
       }
     },
   },
