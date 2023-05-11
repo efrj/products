@@ -11,14 +11,14 @@ class ProductRepository implements ProductContract
 {
     public function getAllProducts(): Collection
     {
-        return Product::all();
+        return Product::with('category')->get();
     }
 
     public function getProductById(int $id): ?Product
     {
-        return Product::find($id);
+        return Product::with('category')->find($id);
     }
-
+    
     public function createProduct(array $details): Product
     {
         return Product::create($details);
