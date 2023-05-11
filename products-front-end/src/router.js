@@ -3,6 +3,8 @@ import ListCategories from './components/ListCategories.vue';
 import CreateCategory from './components/CreateCategory.vue';
 import EditCategory from './components/EditCategory.vue';
 import ListProducts from './components/ListProducts.vue';
+import CreateProduct from './components/CreateProduct.vue';
+import EditProduct from './components/EditProduct.vue';
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/produtos',
     name: 'Produtos',
     component: ListProducts
+  },
+  {
+    path: '/produtos/criar',
+    name: 'CriarProduto',
+    component: CreateProduct
+  },
+  {
+    path: '/produtos/editar/:id',
+    name: 'EditarProduto',
+    component: EditProduct
   },
 ];
 
