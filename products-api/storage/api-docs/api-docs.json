@@ -1,0 +1,199 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Product API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/categories": {
+            "get": {
+                "operationId": "5207237df3b4773a31583ec6b43381a8",
+                "responses": {
+                    "200": {
+                        "description": "Get a list of all categories"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "53cfa412a38739a7f7e9568fd8393bb2",
+                "requestBody": {
+                    "description": "Category details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create a new category"
+                    }
+                }
+            }
+        },
+        "/api/categories/{id}": {
+            "get": {
+                "operationId": "4af0772c5252215d349a9b5d17daa1d5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the category",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a specific category by id"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "bb04f31b7fefbff8db6ebbde6f303512",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the category",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Category details to be updated",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update a specific category by id"
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "3076f68f378e86343803c91f2b274bd8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the category",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete a specific category by id"
+                    }
+                }
+            }
+        },
+        "/api/products": {
+            "get": {
+                "operationId": "f63f799b9ff21ba6864593576a73dc49",
+                "responses": {
+                    "200": {
+                        "description": "Get a list of all products"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "c05a26a89fcee59a708a2a433a9c66c1",
+                "requestBody": {
+                    "description": "Product details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create a new product"
+                    }
+                }
+            }
+        },
+        "/api/products/{id}": {
+            "get": {
+                "operationId": "8244d4a5d630a99727dc98c4461488c2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the product",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a specific product by id"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "666e4794f10622af33bf7e49eef33c50",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the product to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Product details to update",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update an existing product"
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "7c385e03285b67ba02b425febb736afe",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the product",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete a specific product by id"
+                    }
+                }
+            }
+        }
+    }
+}
