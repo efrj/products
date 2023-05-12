@@ -44,7 +44,7 @@ class CategoryController extends Controller
         $updated = $this->categoryRepository->updateCategory($id, $data);
         
         if($updated) {
-            return response()->json(['message' => 'Category updated successfully']);
+            return response()->json(['message' => 'Category updated successfully'], 200);
         } else {
             return response()->json(['error' => 'Category could not be updated'], 500);
         }

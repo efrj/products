@@ -44,7 +44,7 @@ class ProductController extends Controller
         $updated = $this->productRepository->updateProduct($id, $data);
         
         if($updated) {
-            return response()->json(['message' => 'Product updated successfully']);
+            return response()->json(['message' => 'Product updated successfully'], 200);
         } else {
             return response()->json(['error' => 'Product could not be updated'], 500);
         }
