@@ -17,6 +17,19 @@ Execute o comando com o Docker para rodar as migrations no container do PHP
 
 ``docker container exec -it php.products-api php /var/www/artisan migrate`` 
 
+Execute os testes unitários no container do PHP. 
+Entre no container 
+
+``docker container exec -it php.products-api /bin/bash`` 
+
+Volte um diretório 
+
+``cd ..``
+
+Use o comando "php artisan test" 
+
+``php artisan test``
+
 A documentação da API pode ser visualizada na url: "http://localhost:8000/api/documentation" 
 
 Na raís do projeto contem uma coleção de endpoints para importar no Postman ou Insomnia. O nome do arquivo é "Product-Endpoints.postman_collection".
