@@ -9,7 +9,20 @@ Copie o arquivo ".env.example" para ".env"
 
 ``cp .env.example .env``
 
-Execute o comando ``docker-compose up``
+Execute o comando ``docker-compose up`` 
+
+Instale as dependências do projeto. 
+Entre no container 
+
+``docker container exec -it php.products-api /bin/bash`` 
+
+Volte um diretório 
+
+``cd ..``
+
+Use o comando "composer install" 
+
+``composer install`` 
 
 Acesse a API através da url "http://localhost:8000/api" 
 
